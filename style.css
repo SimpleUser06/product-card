@@ -6,8 +6,7 @@
   color: #515076;
 }
 
-
-.header-main-text {
+.main-title {
   font-weight: 400;
   font-size: 70px;
   height: 78px;
@@ -16,7 +15,7 @@
 }
 
 body {
-  background-image: url(/images/fluff.png);
+  background-image: url("/images/flowers.png");
   background-position: 397px 0px;
   background-repeat: no-repeat;
 }
