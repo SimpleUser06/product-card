@@ -1,10 +1,10 @@
 // Смена цвета одной карточки
 
-const changeCardColor = document.querySelector('.change-card-color');
-const oneCard = document.querySelector('.card-container');
+const changeCardColorButton = document.querySelector('.change-card-color');
+const firstCard = document.querySelector('.card-container');
 
-changeCardColor.addEventListener('click', () => {
-  oneCard.style.backgroundColor = '#bb8c0dff'
+changeCardColorButton.addEventListener('click', () => {
+  firstCard.style.backgroundColor = '#bb8c0dff'
 });
 
 
@@ -13,8 +13,9 @@ changeCardColor.addEventListener('click', () => {
 // Смена цвета всех карточек
 
 const allCards = document.querySelectorAll('.card-container');
-const changeCardsColor = document.querySelector('.change-cards-color');
-changeCardsColor.addEventListener('click', () => {
+const changeCardsColorButton = document.querySelector('.change-cards-color');
+
+changeCardsColorButton.addEventListener('click', () => {
   allCards.forEach((card) => {
     card.style.backgroundColor = '#24c9c1ff';
   })
@@ -45,13 +46,13 @@ openGoogleButton.addEventListener('click', openGoogle);
 
 const consoleMessage = document.querySelector('.console-log-message');
 
-function ConsoleLogMessage(message) {
+function consoleLogMessageButton(message) {
   consoleMessage.addEventListener('click' , () => {
     console.log(message)
   })
 };
 
-ConsoleLogMessage('ДЗ №4');
+consoleLogMessageButton('ДЗ №4');
 
 
 
@@ -71,5 +72,5 @@ mainTitle.addEventListener('mouseover', () => {
 const buttonColor = document.querySelector('.btn-color');
 
 buttonColor.addEventListener('click', () => {
-  buttonColor.classList.toggle('yellow')
+  buttonColor.classList.toggle('bg-yellow')
 });
