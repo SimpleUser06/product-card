@@ -6,18 +6,16 @@
   color: #515076;
 }
 
+.bg-yellow {
+  background-color: #ffff00;
+}
+
 .main-title {
   font-weight: 400;
   font-size: 70px;
   height: 78px;
   width: 846px;
   margin: 220px auto;
-}
-
-body {
-  background-image: url("/images/flowers.png");
-  background-position: 397px 0px;
-  background-repeat: no-repeat;
 }
 
 .cards-group {
@@ -27,21 +25,26 @@ body {
   flex-wrap: wrap;
   margin: auto;
   padding: 0;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 45px;
+  position: relative;
+}
+
+.bg-flowers {
+  position: absolute;
+  background-image: url("/images/flowers.png");
+  background-repeat: no-repeat;
+  width: 790px;
+  height: 697px;
+  z-index: -1;
+  top: -518px;
+  left: 0px;
 }
 
 .cards-group-item {
    list-style-type: none;
    width: 340px;
    height: 573px;
-   margin-bottom: 45px;
-}
-
-.cards-group-item-2 {
-  display: flex;
-  margin: auto;
-  width: 725px;
-  justify-content: space-between;
 }
 
 .card-container {
