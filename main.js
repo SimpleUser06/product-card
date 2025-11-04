@@ -44,10 +44,10 @@ openGoogleButton.addEventListener('click', openGoogle);
 
 // Вывод сообщения
 
-const consoleMessage = document.querySelector('.console-log-message');
+const consoleMessageButton = document.querySelector('.console-log-message');
 
 function consoleLogMessageButton(message) {
-  consoleMessage.addEventListener('click' , () => {
+  consoleMessageButton.addEventListener('click' , () => {
     console.log(message)
   })
 };
