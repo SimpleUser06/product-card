@@ -18,6 +18,11 @@
   margin: 220px auto;
 }
 
+.btn-style {
+  padding-right: 1px;
+  cursor: pointer;
+}
+
 .cards-group {
   width: 1110px;
   height: 1191px;
