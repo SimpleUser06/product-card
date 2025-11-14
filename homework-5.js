@@ -29,7 +29,7 @@ compareTheSpeed(350);
 const product = 'Кофе';
 const productPrice = 15;
 
-function calculateTheCost(budget) {
+function purchaseProduct(budget) {
   if (budget >= 15) {
     console.log(`${product} приобретен. Спасибо за покупку!`)
   } else {
@@ -38,25 +38,27 @@ function calculateTheCost(budget) {
   }
 };
 
-calculateTheCost(10);
+purchaseProduct(10);
 
 
 
 // 4. Функция для подсчета температуры тела.
 
-const normalTemperature = 36.6;
+const NORMAL_TEMPERATURE = 36.6;
 
 function measureTheTemperature(temperature) {
-  if (temperature > normalTemperature) {
-    console.log(`Ваша температура равна ${temperature} градусам. Обратитесь к врачу!`)
+  const temperatureOfBody = `Температура вашего тела ${temperature} градусам.`
+
+  if (temperature > NORMAL_TEMPERATURE) {
+    console.log(`${temperatureOfBody} Обратитесь к врачу!`)
   } else if (temperature <= 35) {
-    console.log(`Ваша температура равна ${temperature} градусам. У вас гипотермия! Зайдите в тёплое помещение и обратитесь к врачу!`)
+    console.log(`${temperatureOfBody} У вас гипотермия! Зайдите в тёплое помещение и обратитесь к врачу!`)
   } else {
-    console.log(`Температура вашего тела ${temperature} градусов. Все в порядке.`)
+    console.log(`${temperatureOfBody} Все в порядке.`)
   }
 }
 
-measureTheTemperature(311)
+measureTheTemperature(38)
 
 
 
