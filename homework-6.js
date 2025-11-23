@@ -21,7 +21,7 @@ const carInfo = {
   transmission: 'automatic'
 }
 
-carInfo.carOwner = userInfo.name;
+carInfo.owner = userInfo.name;
 
 console.log(carInfo);
 
