@@ -9,7 +9,7 @@ const userInfo = {
   job: 'Gazprom-neft'
 };
 
-
+console.log(userInfo);
 
 // 2. Объект, содержащий данные автомобиля.
 
@@ -21,7 +21,7 @@ const carInfo = {
   transmission: 'automatic'
 }
 
-carInfo.owner = userInfo.name;
+carInfo.owner = userInfo;
 
 console.log(carInfo);
 
