@@ -22,12 +22,12 @@ console.log(movieSearch)
 // №3. Функция, которая аргументом принимает массив и изменяет его порядок на противоположный.
 
 
-function toReverseArray(array) {
+function ReverseArray(array) {
  return array.reverse()
 };
 
-console.log(toReverseArray(numbers));
-console.log(toReverseArray(movies));
+console.log(ReverseArray(numbers));
+console.log(ReverseArray(movies));
 
 // №5. Добавить файл comments.js, в нём создать константу и в него поместить первые 10 объектов этого массива (https://jsonplaceholder.typicode.com/comments). 
 
@@ -51,9 +51,10 @@ console.log(comments2);
 
 // №9. Перебрать массив, что бы объекты состояли только из айди и имени.
 
-const commentsInfo = comments.map(comments => {
-  return `${comments.id} - ${comments.name}`
-})
+const commentsInfo = comments.map(comment => ({
+  id: comment.id,
+  name: comment.name
+}));
 
 console.log(commentsInfo)
 
