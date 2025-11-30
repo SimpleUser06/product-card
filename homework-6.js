@@ -153,4 +153,4 @@ function isRareBook(books) {
 }
 
 
-console.log(isRareBook(harryPotterBooks))
+console.log(isRareBook(harryPotterBooks));
