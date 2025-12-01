@@ -22,12 +22,12 @@ console.log(movieSearch)
 // №3. Функция, которая аргументом принимает массив и изменяет его порядок на противоположный.
 
 
-function ReverseArray(array) {
+function reverseArray(array) {
  return array.reverse()
 };
 
-console.log(ReverseArray(numbers));
-console.log(ReverseArray(movies));
+console.log(reverseArray(numbers));
+console.log(reverseArray(movies));
 
 // №5. Добавить файл comments.js, в нём создать константу и в него поместить первые 10 объектов этого массива (https://jsonplaceholder.typicode.com/comments). 
 
