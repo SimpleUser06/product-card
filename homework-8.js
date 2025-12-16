@@ -8,7 +8,7 @@ const cardsGroup = document.querySelector('.cards-group');
 function toChooseCards() {
   const result = Number(prompt('Сколько карточек отобразить?'))
   if (result < 1 || result > 5 || isNaN(result)) {
-    return alert('Неверное значение!')
+    return console.log('Неверное значение!')
   } else {
     const productCards2 = productCards.slice(productCards.length - result)
     
@@ -34,9 +34,6 @@ function toChooseCards() {
 }
 
 toChooseCards()
-
-
-
 
 
 const cardsName = productCards.reduce((acc, card) => {
