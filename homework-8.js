@@ -5,28 +5,37 @@ const cardsTemplate = document.querySelector('.cards-template');
 
 const cardsGroup = document.querySelector('.cards-group');
 
-prompt('Сколько карточек отобразить на странице?')
-
-productCards.forEach(card => {
-  const cardClone = cardsTemplate.content.cloneNode(true)
-  cardClone.querySelector('.product-image').src = card.image;
-  cardClone.querySelector('.product-category').textContent = card.category;
-  cardClone.querySelector('.product-name').textContent = card.name;
-  cardClone.querySelector('.product-description').textContent = card.description;
-  cardClone.querySelector('.composition').textContent = card.composition;
-  
-  const compoundList = cardClone.querySelector('.product-compound');
-  compoundList.innerHTML = '';
-  card.productCompound.forEach(item => {
-    const li = document.createElement('li');
-    li.className = 'product-compound-item';
-    li.textContent = item;
-    compoundList.appendChild(li);
-  });
-  cardClone.querySelector('.product-price-label').textContent = card.priceLabel;
-  cardClone.querySelector('.product-price').textContent = card.price;
-  cardsGroup.appendChild(cardClone)
+function toChooseCards() {
+  const result = Number(prompt('Сколько карточек отобразить?'))
+  if (result < 1 || result > 5 || isNaN(result)) {
+    return alert('Неверное значение!')
+  } else {
+    const productCards2 = productCards.slice(productCards.length - result)
+    
+    return productCards2.forEach(card => {
+    const cardClone = cardsTemplate.content.cloneNode(true)
+    cardClone.querySelector('.product-image').src = `${card.image}.png`;
+    cardClone.querySelector('.product-category').textContent = card.category;
+    cardClone.querySelector('.product-name').textContent = card.name;
+    cardClone.querySelector('.product-description').textContent = card.description;
+    
+    const compoundList = cardClone.querySelector('.product-compound');
+    compoundList.innerHTML = '';
+    card.productCompound.forEach(item => {
+      const li = document.createElement('li');
+      li.className = 'product-compound-item';
+      li.textContent = item;
+      compoundList.appendChild(li);
+    });
+    cardClone.querySelector('.product-price').textContent = `${card.price} \u20BD`;
+    cardsGroup.appendChild(cardClone)
 });
+  }
+}
+
+toChooseCards()
+
+
 
 
 
@@ -43,10 +52,4 @@ const productInfo = productCards.reduce((acc, card) => {
   return acc
 }, []);
 
-console.log(productInfo)
-
-
-
-
-
-
+console.log(productInfo);

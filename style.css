@@ -21,6 +21,7 @@
 .btn-style {
   padding-right: 1px;
   cursor: pointer;
+  width:150px;
 }
 
 .cards-group {
