@@ -14,7 +14,7 @@
     <header>
       <h1 class="main-title">Выбери свой продукт</h1>
     </header>
-    <div class="buttons">      
+    <div class="buttons">
       <button class="change-card-color btn-style">Сменить цвет одной карточки</button>
       <button class="change-cards-color btn-style">Сменить цвет всех карточек</button>
       <button class="open-google-page btn-style">Открыть Google</button>
@@ -33,8 +33,7 @@
           <h3 class="product-name"></h3>
           <p class="product-description"></p>
           <p class="composition">Состав:</p>
-          <ul class="product-compound">
-          </ul>
+          <ul class="product-compound"></ul>
           <div class="product-price-container">
             <span class="product-price-label">Цена</span>
             <span class="product-price"></span>
@@ -43,11 +42,90 @@
       </li>
     </template>
 
+    <!-- 5. Создать кнопку "Регистрация". Создать модальное окно, используя классы "modal, modal-showed". 
+    Логика такая: при нажатии на кнопку у нас открывается модальное окно путем добавления modal-showed к div с классом modal. 
+    Не забываем добавить кнопку для закрытия модалки (крестик в углу).  
+    Важные правила создания модалки:
+    1) Задний фон должен быть затемнён, но не полностью черный (Создаем класс overlay, который будет затемнять всю страницу)
+    2) Модальное окно находиться ровно по центру страницы, независимо от масштаба -->
+
+    <!-- 6. Создать форму для регистрации внутри модального окна. 
+    Она должна содержать поля: имя, фамилия, дата рождения, логин, пароль, повторение пароля. 
+    Используйте <label> для того, что бы указать пользователю, какое поле за что отвечает. 
+    Также важно использовать placeholder (обо всем этом можно будет почитать в документации в конце поста) 
+    Разрешается добавить поля на ваше усмотрение. Все поля должны иметь валидацию. 
+    Если пользователь ввел два разных пароля или форма невалидна (используем метод checkValidity()) - мы должны предупредить его о том, 
+    что регистрация отклонена. Если регистрация успешна - выводим значения формы в лог, как в задании №4. 
+    Дополнительно мы должны добавить к этому объекту свойство createdOn и указать туда время создания (используем сущность new Date()). 
+    Также создайте внешнюю переменную user и присвойте ей этот объект. После успешной регистрации - модалка должны закрыться. -->
+    
+    <div class="overlay">
+        <div class="modal">
+          <form class="registration-form" name="registration-form">
+            <button class="modal-close-btn">X</button>
+            <label for="userName" class="reg-label">Имя:</label>
+            <input type="text" name="userName" id="userName" class="reg-input" required>
+            <label for="userSurName" class="reg-label">Фамилия:</label>
+            <input type="text" name="userSurName" id="userSurName" class="reg-input" required>
+            <label for="userAge" class="reg-label">Дата рождения:</label>
+            <input type="date" name="userAge" id="userAge" class="reg-input" required>
+            <label for="userLogin" class="reg-label">Логин:</label>
+            <input type="text" name="userLogin" id="userLogin" class="reg-input" required>
+            <label for="userPassword" class="reg-label">Пароль:</label>
+            <input type="password" name="userPassword" id="userPassword" class="reg-input"required>
+            <label for="userPassword2" class="reg-label">Повторите пароль:</label>
+            <input type="password" name="confirmPassword" id="confirm-password" class="reg-input" required>
+            <button type="submit" class="reg-submit-btn">Зарегистрироваться</button>
+          </form>
+        </div>
+    </div>
+     
+
+    <!-- 3. Сверстать данный footer (https://www.figma.com/design/H8BBp1sq6u6N0MqdF9hrsq/Untitled?node-id=0-1&t=xbP3bxfa7ojVOSJk-1), 
+     используя семантические теги (footer, nav и т.д.) -->
+    
+    <footer class="product-cards-footer">
+      <div class="footer-containner">
+        <div class="footer-title">
+          <h2 class="footer-heading">Product Cards</h2>
+          <p class="footer-description">У нас самые лучшие продукты для кожи!</p>
+          <div class="social-network-links">
+          <a href="#" class="telegram-link"><img src="/images/telegram-icon.svg" alt="telegram-link"></a>
+          <a href="#" class="vkontakte-link"><img src="/images/vkontakte-icon.svg" alt="vkontakte-link"></a>
+        </div>
+        </div>
+        <div class="subscribe">
+          <p class="subscribe-heading">Подпишись на наши акции:</p>
+          <form class="form" id="email-form">
+            <input type="email" placeholder="Введи email..." class="email-input" name="email">
+            <div class="subscribe-line"></div>
+            <button class="subscribe-button" type="submit">Подписаться</button>
+          </form>
+        </div>
+        <nav class="footer-nav">
+          <button class="registration-btn">Регистрация</button>
+          <p class="footer-nav-title">Быстрые ссылки</p>
+          <ul class="nav-list">
+            <li class="nav-list-item">Главная</li>
+            <li class="nav-list-item">Магазины</li>
+            <li class="nav-list-item">Контакты</li>
+          </ul>
+        </nav>
+      </div>
+      <address class="adress">
+        <div class="footer-adress">
+          <div class="footer-line"></div>
+          <p class="adress-text">www.product-cards.com ©all rights reserved</p> 
+        </div>
+      </address>
+    </footer>
+
     <script src="main.js"></script>
     <script src="homework-5.js"></script>
     <script src="homework-6.js"></script>
     <script src="homework-7.js" type="module"></script>
     <script src="homework-8.js" type="module"></script>
+    <script src="homework-9.js"></script>
   </div>
 </body>
 </html>
