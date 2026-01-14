@@ -16,12 +16,16 @@
 
 const emailForm = document.querySelector('#email-form');
 
-emailForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const form = event.target;
+const getFormData = (form) => {
+  form = form.target;
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
-  console.log(data)
+  return data;
+}
+
+emailForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  console.log(getFormData(event));
 })
 
 
@@ -33,7 +37,7 @@ const regSubmitBtn = document.querySelector('.reg-submit-btn');
 const body = document.querySelector('body');
 const modalOverlay = document.querySelector('.overlay');
 const regForm = document.querySelector('.registration-form');
-let user = {}
+let user = null;
 
 
 regBtn.addEventListener('click', () => {
@@ -53,8 +57,7 @@ modalCloseBtn.addEventListener('click', (event) => {
 
 regForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  const formData = new FormData(regForm);
-  const data = Object.fromEntries(formData.entries());
+  const  data = getFormData(event);
   if (data.userPassword !== data.confirmPassword) {
     alert('Веденные пароли не совпадают!')
   } else {

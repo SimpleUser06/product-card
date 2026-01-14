@@ -234,9 +234,13 @@ body {
 }
 
 .nav-list-item {
+  padding-bottom: 17.7px;
+}
+
+.nav-list-link {
+  text-decoration: none;
   color: #FFFFFF;
   font-size: 18px;
-  padding-bottom: 17.7px;
 }
 
 .social-network-links {
