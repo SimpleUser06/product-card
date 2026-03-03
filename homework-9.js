@@ -12,5 +12,40 @@
 //  что регистрация отклонена. Если регистрация успешна - выводим значения формы в лог, как в задании №4. 
 //  Дополнительно мы должны добавить к этому объекту свойство createdOn и указать туда время создания (используем сущность new Date()). 
 //  Также создайте внешнюю переменную user и присвойте ей этот объект. После успешной регистрации - модалка должны закрыться.
+import Modal from './modal.js';
+import Form from './form.js';
 
 
+const emailForm = document.querySelector('#email-form');
+const formData = new Form();
+
+
+emailForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  console.log(formData.getFormData(event));
+})
+
+
+
+const regBtn = document.querySelector('.registration-btn');
+const modal = new Modal('.modal');
+const modalCloseBtn = document.querySelector('.modal-close-btn');
+const regForm = document.querySelector('.registration-form');
+
+
+regBtn.addEventListener('click', () => {
+  modal.openModal();
+})
+
+
+modalCloseBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  modal.closeModal();
+})
+
+
+regForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const data = formData.getFormData(event);
+  formData.checkValidity(data);
+})

@@ -5,52 +5,26 @@
 // Используя данный класс - переписать логику задания №9, связанной с формами. 
 // Как? Используя внутренние методы - мы можем управлять через айди формы получением значений и всем, что должна делать модалка.
 
-class Form {
+export default class Form {
   constructor(formId) {
-    this.formId = formId;
-    this.emailForm = document.querySelector('#email-form');
-    this.regForm = document.querySelector('.registration-form');
-    this.body = document.querySelector('body');
-    this.modal = document.querySelector('.modal');
-    this.modalOverlay = document.querySelector('.overlay');
+    this.formId = document.querySelector(formId);
   }
 
-  formData() {
-  this.getFormData = (form) => {
+  getFormData = (form) => {
   form = form.target;
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
-  return data;
-}
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    return data;
   }
 
-  getEmail() {
-  this.emailForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  console.log(this.getFormData(event));
-})
-  }
-
-  registForm() {
-  this.regForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const data = this.getFormData(event);
-  let user = null;
-  if (data.userPassword !== data.confirmPassword) {
+  checkValidity(data) {
+    let user = null;
+    if (data.userPassword !== data.confirmPassword) {
     alert('Веденные пароли не совпадают!')
   } else {
-  data.createdOn = new Date;
-  user = data
-  console.log(user);
-  this.modal.classList.remove('modal-showed');
-  this.body.style.overflow = 'auto';
-  this.modalOverlay.classList.remove('modal-overlay');
+    data.createdOn = new Date;
+    user = data
+    console.log(user);
   }
-})
   }
 }
-
-const formId = new Form();
-formId.formData();
-formId.getEmail();
-formId.registForm();
