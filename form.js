@@ -7,24 +7,25 @@
 
 export default class Form {
   constructor(formId) {
-    this.formId = document.querySelector(formId);
+    this.form = document.querySelector(formId);
   }
 
-  getFormData = (form) => {
-  form = form.target;
-    const formData = new FormData(form);
+  getFormData = () => {
+    const formData = new FormData(this.form);
     const data = Object.fromEntries(formData.entries());
     return data;
   }
 
-  checkValidity(data) {
-    let user = null;
-    if (data.userPassword !== data.confirmPassword) {
-    alert('Веденные пароли не совпадают!')
-  } else {
-    data.createdOn = new Date;
-    user = data
-    console.log(user);
+  validateAndReport() {
+    if (this.form.checkValidity()) {
+      return true;
+    } else {
+        this.form.reportValidity();
+      return false;
+    }
   }
+
+  resetForm() {
+    this.form.reset();
   }
 }

@@ -16,13 +16,15 @@ import Modal from './modal.js';
 import Form from './form.js';
 
 
-const emailForm = document.querySelector('#email-form');
-const formData = new Form();
+const emailForm = new Form('#email-form');
+const emailFormBtn = document.querySelector('#email-form');
+const formData = new Form('.registration-form');
+let user = null;
 
 
-emailForm.addEventListener('submit', (event) => {
+emailFormBtn.addEventListener('submit', (event) => {
   event.preventDefault();
-  console.log(formData.getFormData(event));
+  console.log(emailForm.getFormData(event));
 })
 
 
@@ -30,7 +32,7 @@ emailForm.addEventListener('submit', (event) => {
 const regBtn = document.querySelector('.registration-btn');
 const modal = new Modal('.modal');
 const modalCloseBtn = document.querySelector('.modal-close-btn');
-const regForm = document.querySelector('.registration-form');
+const regForm = new Form('.registration-form')
 
 
 regBtn.addEventListener('click', () => {
@@ -44,8 +46,25 @@ modalCloseBtn.addEventListener('click', (event) => {
 })
 
 
-regForm.addEventListener('submit', (event) => {
+const regFormElement = document.querySelector('.registration-form');
+
+regFormElement.addEventListener('submit', (event) => {
   event.preventDefault();
-  const data = formData.getFormData(event);
-  formData.checkValidity(data);
-})
+  
+
+  const data = regForm.getFormData();
+  
+
+  if (data.userPassword !== data.confirmPassword) {
+    alert('Введенные пароли не совпадают!');
+    return;
+  }
+  
+  if (regForm.validateAndReport()) {
+    data.createdOn = new Date();
+    user = data;
+    console.log(user);
+    modal.closeModal();
+    regForm.resetForm();
+  }
+});
