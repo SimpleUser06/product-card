@@ -10,7 +10,7 @@ export default class Form {
     this.form = document.querySelector(formId);
   }
 
-  getFormData = () => {
+  getFormData () {
     const formData = new FormData(this.form);
     const data = Object.fromEntries(formData.entries());
     return data;
