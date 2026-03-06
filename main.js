@@ -3,9 +3,16 @@ import './homework-6.js';
 import './homework-7.js';
 import './homework-8.js';
 import './homework-9.js';
-import './homework-10.js';
-import './modal.js';
-import './form.js';
+import './homework-10/homework-10.js';
+import './homework-10/modal.js';
+import './homework-10/form.js';
+import './homework-11/homework-11.js';
+import './homework-11/Drink.js';
+import './homework-11/Cafe.js';
+import './homework-11/Tea.js';
+import './homework-11/Coffee.js';
+import './homework-11/Soda.js';
+
 
 
 // Смена цвета одной карточки
