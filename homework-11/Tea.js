@@ -15,9 +15,3 @@ export default class Tea extends Drink {
     }
   }
 }
-
-const greenTea = new Tea('tea', 'medium', 20, 'green', 70, 3);
-console.log(greenTea);
-
-console.log(greenTea.changeSugarValue(2));
-

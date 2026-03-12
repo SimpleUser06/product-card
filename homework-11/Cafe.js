@@ -9,7 +9,7 @@ export default class Cafe {
   }
 
   orderDrink(drink) {
-    console.log('Заказ принят!')
-    drink.serveDrink()
+    console.log('Заказ принят!');
+    drink.serveDrink();
   }
 }
