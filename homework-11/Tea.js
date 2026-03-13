@@ -3,7 +3,7 @@ import Drink from "./Drink.js";
 export default class Tea extends Drink {
   constructor(name, size, price, color, temperature, sugar) {
     super(name, size, price, temperature)
-    this.color = color
+    this.color = color;
     this.sugar = sugar + ' ч.л. сахара';
   }
 
@@ -15,9 +15,3 @@ export default class Tea extends Drink {
     }
   }
 }
-
-const greenTea = new Tea('tea', 'medium', 20, 'green', 70, 3);
-console.log(greenTea);
-
-console.log(greenTea.changeSugarValue(2));
-

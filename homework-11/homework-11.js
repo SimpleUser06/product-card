@@ -20,3 +20,21 @@ console.log(cafeInfo.getInfo());
 
 const newOrder = new Cafe();
 newOrder.orderDrink(soda);
+
+
+const newCoffee = new Coffee('капучино', 'средний', 15, 68, 'робуста + арабика', 'миндалльное', 'каштан + соленая карамель');
+console.log(newCoffee);
+
+console.log(newCoffee.changeMilk('кокосовое'));
+
+
+const newSoda = new Soda('Cola', 0.5, 10, 4, 3);
+console.log(newSoda);
+
+console.log(newSoda.changeIceValue(2));
+
+
+const greenTea = new Tea('tea', 'medium', 20, 'green', 70, 3);
+console.log(greenTea);
+
+console.log(greenTea.changeSugarValue(2));

@@ -14,9 +14,3 @@ export default class Soda extends Drink {
     }
   }
 }
-
-
-const newSoda = new Soda('Cola', 0.5, 10, 4, 3);
-console.log(newSoda);
-
-console.log(newSoda.changeIceValue(2));

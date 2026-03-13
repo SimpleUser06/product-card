@@ -12,8 +12,3 @@ export default class Coffee extends Drink {
     return this.milk = milk + ' молоко';
   }
 }
-
-const newCoffee = new Coffee('капучино', 'средний', 15, 68, 'робуста + арабика', 'миндалльное', 'каштан + соленая карамель');
-console.log(newCoffee);
-
-console.log(newCoffee.changeMilk('кокосовое'));
