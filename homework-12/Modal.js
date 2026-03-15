@@ -4,16 +4,13 @@ export class Modal {
     this.overlay = document.getElementById('overlay');
     this.shouldCloseOnOverlay = shouldCloseOnOverlay;
     this.#initOpen(buttonId);
+    this.closeButton = this.modal.querySelector('#modal-close-button');
   }
 
 
   open() {
     this.modal.classList.add('modal-showed');
     this.overlay.classList.add('overlay-showed');
-
-    if (this.shouldCloseOnOverlay) {
-      this.overlay.addEventListener('click', this.closeButtonOverlayHandler);
-    }
 
     this.#initClose();
   }
@@ -22,20 +19,19 @@ export class Modal {
     this.modal.classList.remove('modal-showed');
     this.overlay.classList.remove('overlay-showed');
 
-    if (this.shouldCloseOnOverlay) {
-      this.overlay.removeEventListener('click', this.closeButtonOverlayHandler);
-    }
-
     this.#removeClose();
   }
 
-  closeButtonOverlayHandler = () => {
+  closeOverlayHandler = () => {
     this.close();
   };
 
   #removeClose() {
-    const closeButton = this.modal.querySelector('#modal-close-button');
-    closeButton.removeEventListener('click', this.closeButtonOverlayHandler);
+    this.closeButton.removeEventListener('click', this.closeOverlayHandler);
+
+    if (this.shouldCloseOnOverlay) {
+      this.overlay.removeEventListener('click', this.closeOverlayHandler);
+    }
   }
 
   isOpen() {
@@ -50,8 +46,10 @@ export class Modal {
   }
 
   #initClose() {
-    const closeButton = this.modal.querySelector('#modal-close-button');
+    this.closeButton.addEventListener('click', this.closeOverlayHandler);
 
-    closeButton.addEventListener('click', this.closeButtonOverlayHandler);
+    if (this.shouldCloseOnOverlay) {
+      this.overlay.addEventListener('click', this.closeOverlayHandler);
+    }
   }
 }
