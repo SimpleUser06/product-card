@@ -22,15 +22,15 @@ export class Modal {
     this.#removeClose();
   }
 
-  closeOverlayHandler = () => {
+  closeModalHandler = () => {
     this.close();
   };
 
   #removeClose() {
-    this.closeButton.removeEventListener('click', this.closeOverlayHandler);
+    this.closeButton.removeEventListener('click', this.closeModalHandler);
 
     if (this.shouldCloseOnOverlay) {
-      this.overlay.removeEventListener('click', this.closeOverlayHandler);
+      this.overlay.removeEventListener('click', this.closeModalHandler);
     }
   }
 
@@ -46,10 +46,10 @@ export class Modal {
   }
 
   #initClose() {
-    this.closeButton.addEventListener('click', this.closeOverlayHandler);
+    this.closeButton.addEventListener('click', this.closeModalHandler);
 
     if (this.shouldCloseOnOverlay) {
-      this.overlay.addEventListener('click', this.closeOverlayHandler);
+      this.overlay.addEventListener('click', this.closeModalHandler);
     }
   }
 }
