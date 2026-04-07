@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John",
+      "surname": "Smith",
+      "email": "john.smith@gmail.com",
+      "age": 34
+    },
+    {
+      "id": 2,
+      "name": "Emma",
+      "surname": "Johnson",
+      "email": "emma.j.@outlook.com",
+      "age": 28
+    },
+    {
+      "id": 3,
+      "name": "Liam",
+      "surname": "Williams",
+      "email": "liwilliams@yahoo.com",
+      "age": 41
+    },
+    {
+      "id": 4,
+      "name": "Sophia",
+      "surname": "Brown",
+      "email": "sophia.brown@gmail.com",
+      "age": 23
+    },
+    {
+      "id": 5,
+      "name": "Lucas",
+      "surname": "Müller",
+      "email": "l.mueller@web.de",
+      "age": 29
+    },
+    {
+      "id": 6,
+      "name": "Chloé",
+      "surname": "Bernard",
+      "email": "chloe.bernard@orange.fr",
+      "age": 31
+    },
+    {
+      "id": 7,
+      "name": "Matteo",
+      "surname": "Rossi",
+      "email": "m.rossi@libero.it",
+      "age": 26
+    },
+    {
+      "id": 8,
+      "name": "Yuki",
+      "surname": "Tanaka",
+      "email": "y.tanaka@icloud.com",
+      "age": 35
+    },
+    {
+      "id": 9,
+      "name": "Carlos",
+      "surname": "García",
+      "email": "carlos.garcia@hotmail.com",
+      "age": 38
+    },
+    {
+      "id": 10,
+      "name": "Anna",
+      "surname": "Nowak",
+      "email": "anna.nowak@gmail.com",
+      "age": 30
+    }
+  ]
+}
